@@ -1,7 +1,7 @@
 function dx = varyingparams(t,x,u,ctrlparam=[0 0 0 0], xd = [0 0],noise=0,seed=0)
      alpha = u(1)+ 25*sin(3 *t);
-     n = u(2);
-     
+     n = u(2); + 1*cos(.5*t);
+      
      %control laws
      ahat = ctrlparam(1);
      nhat = ctrlparam(2);
@@ -21,4 +21,6 @@ function dx = varyingparams(t,x,u,ctrlparam=[0 0 0 0], xd = [0 0],noise=0,seed=0
      %system of ODEs
      dx(1) = alpha/(1+x(2)^n) - x(1) + n1 + u1;
      dx(2) = alpha/(1+x(1)^n) - x(2) + n2 + u2;
+     dx(3) = u1;
+     dx(4) = u2;
 end

@@ -1,7 +1,7 @@
 function dx = original(t,x,u,noise=0,seed=0)
      alpha = u(1);
      n = u(2);
-     I = u(3);
+     I = u(3); 
      
      %noise
      m = noise;
